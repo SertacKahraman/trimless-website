@@ -7,9 +7,9 @@ type LoaderProps = {
 };
 
 const responsiveVariants: Record<string, number[]> = {
-  "/homojen-isik-dagilimi-trimless-led.webp": [768],
-  "/siva-alti-trimless-led-mimari-cozum.webp": [768],
-  "/trimless-led-profil-urun-gorseli.webp": [480, 640, 960],
+  "/homojen-isik-dagilimi-trimless-led.webp": [384, 640, 750, 828],
+  "/siva-alti-trimless-led-mimari-cozum.webp": [384, 640, 750, 828],
+  "/trimless-led-profil-urun-gorseli.webp": [384, 640, 750, 828],
 };
 
 function getVariantPath(src: string, width: number) {

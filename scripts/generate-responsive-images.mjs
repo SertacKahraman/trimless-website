@@ -6,17 +6,17 @@ const projectRoot = process.cwd();
 const imageJobs = [
   {
     src: "public/homojen-isik-dagilimi-trimless-led.webp",
-    widths: [768],
+    widths: [384, 640, 750, 828],
     quality: 72,
   },
   {
     src: "public/siva-alti-trimless-led-mimari-cozum.webp",
-    widths: [768],
+    widths: [384, 640, 750, 828],
     quality: 72,
   },
   {
     src: "public/trimless-led-profil-urun-gorseli.webp",
-    widths: [480, 640, 960],
+    widths: [384, 640, 750, 828],
     quality: 74,
   },
 ];

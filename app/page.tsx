@@ -328,7 +328,7 @@ export default function Home() {
                     width={1200}
                     height={1200}
                     loading="eager"
-                    sizes="(max-width: 420px) 70vw, 312px"
+                    sizes="(max-width: 420px) 216px, 240px"
                     className="relative z-[1] mx-auto h-[21vh] min-h-[9.5rem] w-full max-w-[88%] scale-[1.01] object-contain object-center brightness-[1.01] contrast-[1.04] saturate-[0.96] drop-shadow-[0_18px_40px_rgba(53,35,18,0.18)]"
                   />
                 </div>
@@ -433,7 +433,7 @@ export default function Home() {
                                     alt="Mimari çözüm trimless led uygulama görseli"
                                     fill
                                     className="object-cover object-center"
-                                    sizes="(max-width: 639px) calc(100vw - 64px), (max-width: 1023px) calc(100vw - 96px), 48vw"
+                                    sizes="(max-width: 639px) calc(100vw - 64px), (max-width: 1023px) calc(100vw - 96px), 44vw"
                                   />
                                   <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0)_42%,rgba(185,151,115,0.12)_100%)]" />
                                 </>
@@ -444,7 +444,7 @@ export default function Home() {
                                     alt="Yüksek performans trimless led uygulama görseli"
                                     fill
                                     className="object-cover object-center"
-                                    sizes="(max-width: 639px) calc(100vw - 64px), (max-width: 1023px) calc(100vw - 96px), 48vw"
+                                    sizes="(max-width: 639px) calc(100vw - 64px), (max-width: 1023px) calc(100vw - 96px), 44vw"
                                   />
                                   <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0)_42%,rgba(185,151,115,0.12)_100%)]" />
                                 </>
