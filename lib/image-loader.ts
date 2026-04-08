@@ -1,5 +1,3 @@
-"use client";
-
 type LoaderProps = {
   src: string;
   width: number;
@@ -9,6 +7,7 @@ type LoaderProps = {
 const responsiveVariants: Record<string, number[]> = {
   "/homojen-isik-dagilimi-trimless-led.webp": [384, 640, 750, 828],
   "/siva-alti-trimless-led-mimari-cozum.webp": [384, 640, 750, 828],
+  "/trimless-led-hero-arka-plan.webp": [640, 750, 828, 1080],
   "/trimless-led-profil-urun-gorseli.webp": [384, 640, 750, 828],
 };
 

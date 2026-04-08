@@ -21,6 +21,7 @@ export function StickyQuickNav() {
 
   return (
     <div
+      data-sticky-nav=""
       className={[
         "pointer-events-none fixed inset-x-0 top-3 z-50 flex justify-center px-3 transition-all duration-500 ease-out sm:top-4 sm:px-6 lg:px-7",
         isVisible

@@ -15,6 +15,11 @@ const imageJobs = [
     quality: 72,
   },
   {
+    src: "public/trimless-led-hero-arka-plan.webp",
+    widths: [640, 750, 828, 1080],
+    quality: 68,
+  },
+  {
     src: "public/trimless-led-profil-urun-gorseli.webp",
     widths: [384, 640, 750, 828],
     quality: 74,
