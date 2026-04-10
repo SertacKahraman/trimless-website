@@ -12,6 +12,21 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: siteKeywords,
   applicationName: siteConfig.name,
+  icons: {
+    icon: [
+      {
+        url: "/favicon.ico?v=20260410",
+        sizes: "256x256",
+        type: "image/x-icon",
+      },
+      {
+        url: "/icon.svg?v=20260410",
+        sizes: "any",
+        type: "image/svg+xml",
+      },
+    ],
+    shortcut: "/favicon.ico?v=20260410",
+  },
   alternates: {
     canonical: "/",
   },
