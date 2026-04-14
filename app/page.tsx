@@ -44,34 +44,14 @@ const organizationSchema = {
   image: [siteConfig.primaryImageUrl],
 };
 
-const productSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "@id": `${siteConfig.url}/#product`,
-  name: "Trimless LED Profil",
-  brand: {
-    "@type": "Brand",
-    name: siteConfig.name,
-  },
-  category: "Trimless lineer aydınlatma",
-  description: siteConfig.description,
-  image: [siteConfig.primaryImageUrl],
-  url: siteConfig.url,
-  keywords: siteKeywords.join(", "),
-  mainEntityOfPage: {
-    "@id": `${siteConfig.url}/#webpage`,
-  },
-};
-
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
+  "@id": `${siteConfig.url}/#service`,
   name: "Trimless LED Profil Satışı",
   serviceType: "Trimless led profil ve sıva altı lineer aydınlatma satışı",
   provider: {
-    "@type": "Organization",
-    name: siteConfig.name,
-    url: siteConfig.url,
+    "@id": `${siteConfig.url}/#organization`,
   },
   areaServed: "TR",
   url: siteConfig.url,
@@ -92,7 +72,7 @@ const webPageSchema = {
     "@id": `${siteConfig.url}/#website`,
   },
   about: {
-    "@id": `${siteConfig.url}/#product`,
+    "@id": `${siteConfig.url}/#service`,
   },
   primaryImageOfPage: primaryImageObject,
   image: [siteConfig.primaryImageUrl],
@@ -215,10 +195,6 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
       <script
         type="application/ld+json"
