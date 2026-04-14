@@ -7,38 +7,60 @@ import { TrackedLink } from "@/components/tracked-link";
 import { cormorant } from "@/lib/fonts";
 import { navigationLinks, siteConfig, siteKeywords } from "@/lib/site";
 
+const primaryImageObject = {
+  "@type": "ImageObject",
+  url: siteConfig.primaryImageUrl,
+  contentUrl: siteConfig.primaryImageUrl,
+  caption: siteConfig.primaryImageAlt,
+};
+
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${siteConfig.url}/#website`,
   name: siteConfig.name,
   url: siteConfig.url,
   inLanguage: "tr-TR",
   description: siteConfig.description,
+  image: [siteConfig.primaryImageUrl],
+  publisher: {
+    "@id": `${siteConfig.url}/#organization`,
+  },
 };
 
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${siteConfig.url}/#organization`,
   name: siteConfig.name,
   url: siteConfig.url,
   email: siteConfig.email,
   telephone: siteConfig.phoneHref,
   areaServed: "TR",
+  logo: {
+    "@type": "ImageObject",
+    url: siteConfig.logoUrl,
+  },
+  image: [siteConfig.primaryImageUrl],
 };
 
 const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
-  name: "Trimless Led",
+  "@id": `${siteConfig.url}/#product`,
+  name: "Trimless LED Profil",
   brand: {
     "@type": "Brand",
     name: siteConfig.name,
   },
   category: "Trimless lineer aydınlatma",
   description: siteConfig.description,
-  image: [`${siteConfig.url}/trimless-led-profil-urun-gorseli.webp`],
+  image: [siteConfig.primaryImageUrl],
   url: siteConfig.url,
   keywords: siteKeywords.join(", "),
+  mainEntityOfPage: {
+    "@id": `${siteConfig.url}/#webpage`,
+  },
 };
 
 const serviceSchema = {
@@ -53,8 +75,27 @@ const serviceSchema = {
   },
   areaServed: "TR",
   url: siteConfig.url,
+  image: [siteConfig.primaryImageUrl],
   description:
     "Türkiye geneli trimless led profil, çerçevesiz led profil ve sıva altı lineer aydınlatma çözümleri.",
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${siteConfig.url}/#webpage`,
+  url: siteConfig.url,
+  name: siteConfig.title,
+  description: siteConfig.description,
+  inLanguage: "tr-TR",
+  isPartOf: {
+    "@id": `${siteConfig.url}/#website`,
+  },
+  about: {
+    "@id": `${siteConfig.url}/#product`,
+  },
+  primaryImageOfPage: primaryImageObject,
+  image: [siteConfig.primaryImageUrl],
 };
 
 const seoPhoneDisplay = siteConfig.phoneDisplay;
@@ -173,6 +214,14 @@ export default function Home() {
       />
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <script
@@ -196,7 +245,7 @@ export default function Home() {
         <section className="relative mx-auto h-[calc(100svh-3.25rem)] w-full max-w-[1880px] overflow-hidden rounded-b-[2rem] rounded-t-none bg-[#b99773] shadow-[0_20px_80px_rgba(15,23,42,0.08)] sm:h-[calc(100svh-4rem)] sm:rounded-b-[2.2rem] lg:h-[calc(100svh-4.75rem)] lg:rounded-b-[2.4rem]">
           <Image
             src="/trimless-led-hero-arka-plan.webp"
-            alt="Trimless LED arka plan görseli"
+            alt=""
             fill
             preload
             fetchPriority="high"

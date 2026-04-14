@@ -10,6 +10,10 @@ const phoneDigits = normalizePhone(
 const whatsAppDigits = normalizePhone(
   process.env.NEXT_PUBLIC_CONTACT_WHATSAPP ?? "905413746161",
 );
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://trimlessled.com").replace(
+  /\/$/,
+  "",
+);
 const phoneHrefDigits = phoneDigits.startsWith("90")
   ? phoneDigits
   : phoneDigits.startsWith("0")
@@ -33,13 +37,17 @@ export const siteKeywords = [
 
 export const siteConfig = {
   name: "Trimless LED",
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://trimlessled.com").replace(
-    /\/$/,
-    "",
-  ),
+  url: siteUrl,
   title: "Trimless LED Profil | Sıva Altı Çerçevesiz Lineer Aydınlatma",
   description:
     "Trimless LED profil çözümleri ile sıva altı, çerçevesiz ve lineer aydınlatma sistemlerini keşfedin. Türkiye geneli satış, hızlı teklif ve WhatsApp desteği.",
+  primaryImagePath: "/trimless-led-seo-urun-gorseli.png",
+  primaryImageUrl: `${siteUrl}/trimless-led-seo-urun-gorseli.png`,
+  primaryImageAlt: "Trimless LED sıva altı profil ürün görseli",
+  primaryImageWidth: 2048,
+  primaryImageHeight: 2048,
+  logoPath: "/trimless-led-logo-mark-light.svg",
+  logoUrl: `${siteUrl}/trimless-led-logo-mark-light.svg`,
   phoneDisplay,
   phoneHref: `tel:+${phoneHrefDigits}`,
   whatsAppDigits,

@@ -12,6 +12,20 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: siteKeywords,
   applicationName: siteConfig.name,
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: ["/favicon.ico"],
+    apple: [
+      {
+        url: "/apple-icon",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+  },
   alternates: {
     canonical: "/",
   },
@@ -24,18 +38,25 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: siteConfig.title,
+        url: siteConfig.primaryImageUrl,
+        width: siteConfig.primaryImageWidth,
+        height: siteConfig.primaryImageHeight,
+        alt: siteConfig.primaryImageAlt,
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: siteConfig.title,
     description: siteConfig.description,
-    images: ["/twitter-image"],
+    images: [
+      {
+        url: siteConfig.primaryImageUrl,
+        width: siteConfig.primaryImageWidth,
+        height: siteConfig.primaryImageHeight,
+        alt: siteConfig.primaryImageAlt,
+      },
+    ],
   },
   category: "lighting",
   robots: {
@@ -71,6 +92,9 @@ export default function RootLayout({
       lang="tr"
       className={`${sora.variable} ${ibmPlexMono.variable} scroll-smooth`}
     >
+      <head>
+        <link rel="image_src" href={siteConfig.primaryImageUrl} />
+      </head>
       <body className="overflow-x-hidden">
         {children}
         {GA_TRACKING_ID ? <AnalyticsListener /> : null}
