@@ -41,8 +41,8 @@ export const siteConfig = {
   title: "Trimless LED Profil | Sıva Altı Çerçevesiz Lineer Aydınlatma",
   description:
     "Trimless LED profil çözümleri ile sıva altı, çerçevesiz ve lineer aydınlatma sistemlerini keşfedin. Türkiye geneli satış, hızlı teklif ve WhatsApp desteği.",
-  primaryImagePath: "/trimless-led-seo-urun-gorseli.png",
-  primaryImageUrl: `${siteUrl}/trimless-led-seo-urun-gorseli.png`,
+  primaryImagePath: "/trimless-led-seo-urun-gorseli.webp",
+  primaryImageUrl: `${siteUrl}/trimless-led-seo-urun-gorseli.webp`,
   primaryImageAlt: "Trimless LED sıva altı profil ürün görseli",
   primaryImageWidth: 2048,
   primaryImageHeight: 2048,

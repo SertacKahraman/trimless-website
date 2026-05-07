@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { StickyQuickNav } from "@/components/sticky-quick-nav";
 import { TrackedLink } from "@/components/tracked-link";
 import { cormorant } from "@/lib/fonts";
-import { navigationLinks, siteConfig, siteKeywords } from "@/lib/site";
+import { navigationLinks, siteConfig } from "@/lib/site";
 
 const primaryImageObject = {
   "@type": "ImageObject",
@@ -76,6 +76,19 @@ const webPageSchema = {
   },
   primaryImageOfPage: primaryImageObject,
   image: [siteConfig.primaryImageUrl],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Trimless LED Profil",
+      item: siteConfig.url,
+    },
+  ],
 };
 
 const seoPhoneDisplay = siteConfig.phoneDisplay;
@@ -202,6 +215,10 @@ export default function Home() {
       />
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
@@ -221,7 +238,7 @@ export default function Home() {
         <section className="relative mx-auto h-[calc(100svh-3.25rem)] w-full max-w-[1880px] overflow-hidden rounded-b-[2rem] rounded-t-none bg-[#b99773] shadow-[0_20px_80px_rgba(15,23,42,0.08)] sm:h-[calc(100svh-4rem)] sm:rounded-b-[2.2rem] lg:h-[calc(100svh-4.75rem)] lg:rounded-b-[2.4rem]">
           <Image
             src="/trimless-led-hero-arka-plan.webp"
-            alt=""
+            alt="Modern mekanda trimless LED lineer aydınlatma uygulaması"
             fill
             preload
             fetchPriority="high"
@@ -245,7 +262,7 @@ export default function Home() {
               <div className="absolute bottom-[-12%] right-[-8%] h-[52%] w-[52%] rounded-full bg-[radial-gradient(circle,rgba(176,135,97,0.22)_0%,rgba(176,135,97,0)_72%)] blur-3xl" />
               <Image
                 src="/trimless-led-profil-urun-gorseli.webp"
-                alt="Trimless LED ürün fotoğrafı"
+                alt="Trimless LED sıva altı profil ürün fotoğrafı"
                 width={1600}
                 height={1600}
                 loading="eager"
@@ -345,7 +362,7 @@ export default function Home() {
                   <div className="absolute inset-x-[14%] top-[8%] h-[18%] rounded-full bg-[radial-gradient(circle,rgba(255,247,236,0.72)_0%,rgba(255,247,236,0)_72%)] blur-xl" />
                   <Image
                     src="/trimless-led-profil-urun-gorseli.webp"
-                    alt="Trimless LED ürün fotoğrafı"
+                    alt="Trimless LED profil mobil ürün fotoğrafı"
                     width={1200}
                     height={1200}
                     loading="eager"
