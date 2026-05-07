@@ -1,7 +1,7 @@
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata, Viewport } from "next";
 import { AnalyticsListener } from "@/components/analytics-listener";
-import { ibmPlexMono, sora } from "@/lib/fonts";
+import { sora } from "@/lib/fonts";
 import { GA_TRACKING_ID } from "@/lib/analytics";
 import { siteConfig, siteKeywords } from "@/lib/site";
 import "./globals.css";
@@ -88,10 +88,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="tr"
-      className={`${sora.variable} ${ibmPlexMono.variable} scroll-smooth`}
-    >
+    <html lang="tr" className={`${sora.variable} scroll-smooth`}>
       <head>
         <link rel="image_src" href={siteConfig.primaryImageUrl} />
       </head>

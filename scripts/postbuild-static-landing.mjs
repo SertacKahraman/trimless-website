@@ -5,6 +5,34 @@ const outDir = resolve(process.cwd(), "out");
 const indexPath = join(outDir, "index.html");
 const nextBackupPath = join(outDir, "index.next.html");
 const staticSnapshotPath = join(outDir, "index.static.html");
+const inlineCssMaxBytes = 65536;
+
+function inlineSmallStylesheets(html) {
+  return html.replace(
+    /<link rel="stylesheet" href="([^"]+\.css)" data-precedence="next"\/>/g,
+    (fullMatch, href) => {
+      const stylesheetPath = join(outDir, href.replace(/^\//, ""));
+
+      if (!existsSync(stylesheetPath)) {
+        return fullMatch;
+      }
+
+      const css = readFileSync(stylesheetPath, "utf8").replace(
+        /url\((["']?)\.\.\/media\//g,
+        "url($1/_next/static/media/",
+      );
+
+      if (Buffer.byteLength(css) > inlineCssMaxBytes) {
+        return fullMatch;
+      }
+
+      return `<style data-precedence="next" data-href="${href}">${css.replace(
+        /<\/style/gi,
+        "<\\/style",
+      )}</style>`;
+    },
+  );
+}
 
 function stripNextRuntime(html) {
   let result = html;
@@ -34,6 +62,7 @@ function stripNextRuntime(html) {
     "",
   );
   result = result.replace(/<div hidden=""><!--\$--><!--\/\$--><\/div>/g, "");
+  result = inlineSmallStylesheets(result);
 
   const noscriptStyle =
     '<noscript><style>[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>';

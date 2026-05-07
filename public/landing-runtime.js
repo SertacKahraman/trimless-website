@@ -44,17 +44,42 @@
       return;
     }
 
-    function syncVisibility() {
-      var visible = window.scrollY > 88;
+    function setVisibility(visible) {
+      if (visible === isVisible) {
+        return;
+      }
 
+      isVisible = visible;
       stickyNav.classList.toggle("translate-y-0", visible);
       stickyNav.classList.toggle("opacity-100", visible);
       stickyNav.classList.toggle("-translate-y-4", !visible);
       stickyNav.classList.toggle("opacity-0", !visible);
     }
 
-    syncVisibility();
-    window.addEventListener("scroll", syncVisibility, { passive: true });
+    var isVisible = null;
+
+    if (!("IntersectionObserver" in window)) {
+      setVisibility(false);
+      return;
+    }
+
+    var sentinel = document.createElement("div");
+    sentinel.setAttribute("aria-hidden", "true");
+    sentinel.style.cssText =
+      "position:absolute;left:0;top:88px;width:1px;height:1px;pointer-events:none;opacity:0;";
+    document.body.prepend(sentinel);
+
+    var observer = new IntersectionObserver(function (entries) {
+      var entry = entries[0];
+
+      if (!entry) {
+        return;
+      }
+
+      setVisibility(!entry.isIntersecting);
+    });
+
+    observer.observe(sentinel);
   }
 
   function initAnalyticsTracking() {

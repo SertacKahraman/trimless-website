@@ -9,14 +9,32 @@ export function StickyQuickNav() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsVisible(window.scrollY > 88);
+    if (!("IntersectionObserver" in window)) {
+      return;
+    }
+
+    const sentinel = document.createElement("div");
+    sentinel.setAttribute("aria-hidden", "true");
+    sentinel.style.cssText =
+      "position:absolute;left:0;top:88px;width:1px;height:1px;pointer-events:none;opacity:0;";
+    document.body.prepend(sentinel);
+
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+
+      if (!entry) {
+        return;
+      }
+
+      setIsVisible(!entry.isIntersecting);
+    });
+
+    observer.observe(sentinel);
+
+    return () => {
+      observer.disconnect();
+      sentinel.remove();
     };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
