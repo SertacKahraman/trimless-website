@@ -60,6 +60,20 @@ const serviceSchema = {
     "Türkiye geneli trimless led profil, çerçevesiz led profil ve sıva altı lineer aydınlatma çözümleri.",
 };
 
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": `${siteConfig.url}/#product`,
+  name: "Trimless LED Profil",
+  description: siteConfig.description,
+  url: siteConfig.url,
+  image: [siteConfig.primaryImageUrl],
+  brand: {
+    "@id": `${siteConfig.url}/#organization`,
+  },
+  category: "Sıva altı lineer aydınlatma profili",
+};
+
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -215,6 +229,10 @@ export default function Home() {
       />
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <script
@@ -236,14 +254,10 @@ export default function Home() {
         </div>
 
         <section className="relative mx-auto h-[calc(100svh-3.25rem)] w-full max-w-[1880px] overflow-hidden rounded-b-[2rem] rounded-t-none bg-[#b99773] shadow-[0_20px_80px_rgba(15,23,42,0.08)] sm:h-[calc(100svh-4rem)] sm:rounded-b-[2.2rem] lg:h-[calc(100svh-4.75rem)] lg:rounded-b-[2.4rem]">
-          <Image
-            src="/trimless-led-hero-arka-plan.webp"
-            alt="Modern mekanda trimless LED lineer aydınlatma uygulaması"
-            fill
-            preload
-            fetchPriority="high"
-            className="object-cover object-center brightness-[0.92] contrast-[1.06] saturate-[0.86] sepia-[0.12] hue-rotate-[-6deg]"
-            sizes="100vw"
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-cover bg-center brightness-[0.92] contrast-[1.06] saturate-[0.86] sepia-[0.12] hue-rotate-[-6deg]"
+            style={{ backgroundImage: 'url("/trimless-led-hero-arka-plan.webp")' }}
           />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,248,238,0.12),rgba(255,248,238,0)_36%)]" />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(247,241,232,0.10),rgba(247,241,232,0.03)_26%,rgba(34,24,18,0.16)_100%)]" />
@@ -261,10 +275,10 @@ export default function Home() {
               <div className="absolute inset-x-[10%] top-[7%] h-[20%] rounded-full bg-[radial-gradient(circle,rgba(255,247,236,0.75)_0%,rgba(255,247,236,0)_72%)] blur-2xl" />
               <div className="absolute bottom-[-12%] right-[-8%] h-[52%] w-[52%] rounded-full bg-[radial-gradient(circle,rgba(176,135,97,0.22)_0%,rgba(176,135,97,0)_72%)] blur-3xl" />
               <Image
-                src="/trimless-led-profil-urun-gorseli.webp"
+                src={siteConfig.primaryImagePath}
                 alt="Trimless LED sıva altı profil ürün fotoğrafı"
-                width={1600}
-                height={1600}
+                width={siteConfig.primaryImageWidth}
+                height={siteConfig.primaryImageHeight}
                 loading="eager"
                 sizes="(max-width: 1279px) 50vw, 44vw"
                 className="relative z-[1] h-[100%] w-[100%] scale-[1.08] object-contain object-center brightness-[1.03] contrast-[1.07] saturate-[0.98] drop-shadow-[0_34px_84px_rgba(53,35,18,0.24)]"
@@ -361,10 +375,10 @@ export default function Home() {
                   <div className="absolute inset-[1px] rounded-[1.65rem] border border-white/18" />
                   <div className="absolute inset-x-[14%] top-[8%] h-[18%] rounded-full bg-[radial-gradient(circle,rgba(255,247,236,0.72)_0%,rgba(255,247,236,0)_72%)] blur-xl" />
                   <Image
-                    src="/trimless-led-profil-urun-gorseli.webp"
+                    src={siteConfig.primaryImagePath}
                     alt="Trimless LED profil mobil ürün fotoğrafı"
-                    width={1200}
-                    height={1200}
+                    width={siteConfig.primaryImageWidth}
+                    height={siteConfig.primaryImageHeight}
                     loading="eager"
                     sizes="(max-width: 420px) 216px, 240px"
                     className="relative z-[1] mx-auto h-[21vh] min-h-[9.5rem] w-full max-w-[88%] scale-[1.01] object-contain object-center brightness-[1.01] contrast-[1.04] saturate-[0.96] drop-shadow-[0_18px_40px_rgba(53,35,18,0.18)]"

@@ -38,9 +38,9 @@ export const siteKeywords = [
 export const siteConfig = {
   name: "Trimless LED",
   url: siteUrl,
-  title: "Trimless LED Profil | Sıva Altı Çerçevesiz Lineer Aydınlatma",
+  title: "Trimless LED Profil (2026) | Sıva Altı Çerçevesiz Led",
   description:
-    "Trimless LED profil çözümleri ile sıva altı, çerçevesiz ve lineer aydınlatma sistemlerini keşfedin. Türkiye geneli satış, hızlı teklif ve WhatsApp desteği.",
+    "Trimless LED profil çözümleri ile sıva altı, çerçevesiz ve lineer aydınlatma sistemlerini keşfedin. Türkiye geneli satış için WhatsApp'tan hızlı teklif alın.",
   primaryImagePath: "/trimless-led-seo-urun-gorseli.webp",
   primaryImageUrl: `${siteUrl}/trimless-led-seo-urun-gorseli.webp`,
   primaryImageAlt: "Trimless LED sıva altı profil ürün görseli",
