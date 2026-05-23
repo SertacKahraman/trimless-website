@@ -226,7 +226,7 @@ export default function Home() {
         <RevealObserver />
         <div className="page-mesh-gradient pointer-events-none absolute inset-0" />
         <div className="relative z-10">
-        <div className="mx-auto mb-2 flex h-auto min-h-7 max-w-[1880px] items-center justify-center px-4 py-1 text-center sm:mb-3 sm:h-8 sm:py-0">
+        <div className="mx-auto mb-2 flex h-auto min-h-7 w-full items-center justify-center px-4 py-1 text-center sm:mb-3 sm:h-8 sm:py-0">
           <p
             className="font-akkurat block text-[0.76rem] font-bold leading-[1] tracking-[0.02em] text-slate-700 sm:text-[0.82rem]"
             style={{ fontFamily: "AkkuratLL, sans-serif" }}
@@ -235,7 +235,7 @@ export default function Home() {
           </p>
         </div>
 
-        <section className="relative mx-auto h-[calc(100svh-3.25rem)] w-full max-w-[1880px] overflow-hidden rounded-b-[2rem] rounded-t-none bg-[#b99773] shadow-[0_20px_80px_rgba(15,23,42,0.08)] sm:h-[calc(100svh-4rem)] sm:rounded-b-[2.2rem] lg:h-[calc(100svh-4.75rem)] lg:rounded-b-[2.4rem]">
+        <section className="relative mx-auto h-[calc(100svh-3.25rem)] w-full overflow-hidden rounded-b-[2rem] rounded-t-none bg-[#b99773] shadow-[0_20px_80px_rgba(15,23,42,0.08)] sm:h-[calc(100svh-4rem)] sm:rounded-b-[2.2rem] lg:h-[calc(100svh-4.75rem)] lg:rounded-b-[2.4rem]">
           <div
             aria-hidden="true"
             className="absolute inset-0 bg-cover bg-center brightness-[0.92] contrast-[1.06] saturate-[0.86] sepia-[0.12] hue-rotate-[-6deg]"
@@ -252,7 +252,7 @@ export default function Home() {
           <div className="absolute right-[6%] top-[21%] hidden h-[40vh] w-[40vh] rounded-full bg-[radial-gradient(circle,rgba(255,244,228,0.55)_0%,rgba(255,232,206,0.18)_36%,rgba(255,232,206,0)_72%)] blur-3xl md:block lg:top-[19%] lg:h-[44vh] lg:w-[44vh]" />
 
           <div className="absolute right-[3%] top-1/2 z-[1] hidden -translate-y-1/2 items-center justify-end md:flex md:w-[53%] lg:right-[4%] lg:w-[50%] xl:right-[5%] xl:w-[48%]">
-            <div className="relative flex aspect-square w-full max-w-[880px] items-center justify-center overflow-hidden rounded-[2.2rem] border border-white/28 bg-[linear-gradient(140deg,rgba(247,241,232,0.28)_0%,rgba(215,194,170,0.18)_48%,rgba(129,97,66,0.22)_100%)] px-[3.5%] py-[3.5%] shadow-[0_30px_90px_rgba(53,35,18,0.20)] backdrop-blur-[14px]">
+            <div className="relative flex aspect-square w-[clamp(18rem,28vw,min(32rem,calc(100svh-12rem)))] items-center justify-center overflow-hidden rounded-[2.2rem] border border-white/28 bg-[linear-gradient(140deg,rgba(247,241,232,0.28)_0%,rgba(215,194,170,0.18)_48%,rgba(129,97,66,0.22)_100%)] px-[3.5%] py-[3.5%] shadow-[0_30px_90px_rgba(53,35,18,0.20)] backdrop-blur-[14px] min-[2200px]:w-[clamp(24rem,34vw,min(46rem,calc(100svh-8rem)))]">
               <div className="absolute inset-[1px] rounded-[2.05rem] border border-white/20" />
               <div className="absolute inset-x-[10%] top-[7%] h-[20%] rounded-full bg-[radial-gradient(circle,rgba(255,247,236,0.75)_0%,rgba(255,247,236,0)_72%)] blur-2xl" />
               <div className="absolute bottom-[-12%] right-[-8%] h-[52%] w-[52%] rounded-full bg-[radial-gradient(circle,rgba(176,135,97,0.22)_0%,rgba(176,135,97,0)_72%)] blur-3xl" />
@@ -276,7 +276,7 @@ export default function Home() {
                     trimlessled.com
                   </span>
 
-                  <nav className="font-akkurat absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 text-sm text-slate-700 md:flex">
+                  <nav className="font-akkurat absolute left-1/2 hidden -translate-x-1/2 items-center gap-6 text-[0.82rem] text-slate-700 md:flex min-[1600px]:gap-9 min-[1600px]:text-sm">
                     {navigationLinks.map((item) => (
                       <a
                         key={item.label}
@@ -288,23 +288,23 @@ export default function Home() {
                     ))}
                   </nav>
 
-                  <div className="hidden rounded-full border border-black/10 px-4 py-3 text-xs text-slate-700 md:flex">
+                  <div className="hidden rounded-full border border-black/10 px-3.5 py-2.5 text-[0.72rem] text-slate-700 md:flex min-[1600px]:px-4 min-[1600px]:py-3 min-[1600px]:text-xs">
                     TR
                   </div>
                 </div>
 
-                <div className="mt-4 max-w-full sm:mt-10 sm:max-w-[380px] md:mt-[8vh] md:max-w-[430px] lg:max-w-[35%]">
+                <div className="mt-4 max-w-full sm:mt-10 sm:max-w-[380px] md:mt-[8vh] md:max-w-[430px] lg:max-w-[42%] min-[1600px]:max-w-[38%] min-[2200px]:max-w-[35%]">
                   <span className="mb-4 flex items-center justify-center md:justify-start">
-                    <span className="rounded-full bg-slate-950 px-3 py-1 text-xs font-semibold text-white">
+                    <span className="rounded-full bg-slate-950 px-3 py-1 text-[0.7rem] font-semibold text-white min-[1600px]:text-xs">
                       Trimless Led
                     </span>
                   </span>
 
-                  <h1 className="bg-linear-to-br from-[#17120d] via-[#5e4327] to-[#b3895d] bg-clip-text text-center text-[2.7rem] leading-none font-medium tracking-tight text-transparent sm:text-[4.3rem] md:text-left md:text-[5rem] lg:text-[4.3vw] xl:text-[4.6rem]">
+                  <h1 className="bg-linear-to-br from-[#17120d] via-[#5e4327] to-[#b3895d] bg-clip-text text-center text-[2.7rem] leading-none font-medium tracking-tight text-transparent sm:text-[4.3rem] md:text-left md:text-[5rem] lg:text-[clamp(3.35rem,3.8vw,4.45rem)] min-[2200px]:text-[clamp(4.35rem,3.2vw,5.25rem)]">
                     Trimless LED
                   </h1>
                   <h2
-                    className={`${cormorant.className} mt-2 min-h-[1.18em] overflow-visible pt-[0.06em] pb-[0.18em] bg-linear-to-r from-[#5d4329] via-[#6c4f31] to-[#866445] bg-clip-text text-center text-[1.95rem] leading-[1.08] font-normal text-transparent italic sm:text-[3rem] sm:leading-[1.02] md:mt-4 md:text-left md:text-[3.4rem] md:leading-[1.02] lg:text-[3vw] lg:leading-[1.03] xl:text-[3.4rem]`}
+                    className={`${cormorant.className} mt-2 min-h-[1.18em] overflow-visible pt-[0.06em] pb-[0.18em] bg-linear-to-r from-[#5d4329] via-[#6c4f31] to-[#866445] bg-clip-text text-center text-[1.95rem] leading-[1.08] font-normal text-transparent italic sm:text-[3rem] sm:leading-[1.02] md:mt-4 md:text-left md:text-[3.4rem] md:leading-[1.02] lg:text-[clamp(2.15rem,2.45vw,3.05rem)] lg:leading-[1.03] min-[2200px]:text-[clamp(3rem,2.3vw,3.7rem)]`}
                   >
                     Mimaride Kesintisiz Işık Çizgisi
                   </h2>
@@ -312,17 +312,17 @@ export default function Home() {
               </div>
 
               <div className="hero-main hidden md:block">
-                <div className="mb-4 flex flex-wrap items-end gap-8 lg:mb-6">
+                <div className="mb-4 flex flex-wrap items-end gap-6 lg:mb-6 min-[1600px]:gap-8">
                   <TrackedLink
                     href={siteConfig.whatsAppUrl}
                     eventName="click_whatsapp"
                     eventLabel="hero_whatsapp"
-                    className="inline-flex items-center justify-center rounded-full bg-slate-900 px-7 py-4 text-sm font-bold text-[#f7f1e8] transition hover:bg-[#8b6b45]"
+                    className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-3 text-[0.78rem] font-bold text-[#f7f1e8] transition hover:bg-[#8b6b45] min-[1600px]:px-7 min-[1600px]:py-4 min-[1600px]:text-sm"
                   >
                     WhatsApp ile Teklif Al
                   </TrackedLink>
 
-                  <div className="space-y-1 text-sm text-slate-700">
+                  <div className="space-y-1 text-[0.78rem] text-slate-700 min-[1600px]:text-sm">
                     <p>
                       Telefon:{" "}
                       <TrackedLink
