@@ -60,20 +60,6 @@ const serviceSchema = {
     "Türkiye geneli trimless led profil, çerçevesiz led profil ve sıva altı lineer aydınlatma çözümleri.",
 };
 
-const productSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "@id": `${siteConfig.url}/#product`,
-  name: "Trimless LED Profil",
-  description: siteConfig.description,
-  url: siteConfig.url,
-  image: [siteConfig.primaryImageUrl],
-  brand: {
-    "@id": `${siteConfig.url}/#organization`,
-  },
-  category: "Sıva altı lineer aydınlatma profili",
-};
-
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -226,10 +212,6 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
       <script
         type="application/ld+json"
