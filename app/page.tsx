@@ -251,8 +251,8 @@ export default function Home() {
           <div className="absolute inset-x-0 bottom-0 h-[16%] bg-[linear-gradient(0deg,rgba(33,21,12,0.16)_0%,rgba(33,21,12,0)_100%)]" />
           <div className="absolute right-[6%] top-[21%] hidden h-[40vh] w-[40vh] rounded-full bg-[radial-gradient(circle,rgba(255,244,228,0.55)_0%,rgba(255,232,206,0.18)_36%,rgba(255,232,206,0)_72%)] blur-3xl md:block lg:top-[19%] lg:h-[44vh] lg:w-[44vh]" />
 
-          <div className="absolute right-[3%] top-[19%] bottom-[4%] z-[1] hidden items-center justify-end md:flex md:w-[53%] lg:right-[4%] lg:top-[16%] lg:w-[50%] xl:right-[5%] xl:top-[15%] xl:w-[48%]">
-            <div className="relative flex h-full w-full max-w-[880px] items-center justify-center overflow-hidden rounded-[2.2rem] border border-white/28 bg-[linear-gradient(140deg,rgba(247,241,232,0.28)_0%,rgba(215,194,170,0.18)_48%,rgba(129,97,66,0.22)_100%)] px-[3.5%] py-[3.5%] shadow-[0_30px_90px_rgba(53,35,18,0.20)] backdrop-blur-[14px]">
+          <div className="absolute right-[3%] top-1/2 z-[1] hidden -translate-y-1/2 items-center justify-end md:flex md:w-[53%] lg:right-[4%] lg:w-[50%] xl:right-[5%] xl:w-[48%]">
+            <div className="relative flex aspect-square w-full max-w-[880px] items-center justify-center overflow-hidden rounded-[2.2rem] border border-white/28 bg-[linear-gradient(140deg,rgba(247,241,232,0.28)_0%,rgba(215,194,170,0.18)_48%,rgba(129,97,66,0.22)_100%)] px-[3.5%] py-[3.5%] shadow-[0_30px_90px_rgba(53,35,18,0.20)] backdrop-blur-[14px]">
               <div className="absolute inset-[1px] rounded-[2.05rem] border border-white/20" />
               <div className="absolute inset-x-[10%] top-[7%] h-[20%] rounded-full bg-[radial-gradient(circle,rgba(255,247,236,0.75)_0%,rgba(255,247,236,0)_72%)] blur-2xl" />
               <div className="absolute bottom-[-12%] right-[-8%] h-[52%] w-[52%] rounded-full bg-[radial-gradient(circle,rgba(176,135,97,0.22)_0%,rgba(176,135,97,0)_72%)] blur-3xl" />
@@ -831,7 +831,7 @@ export default function Home() {
           className="relative z-10 -mx-4 w-auto max-w-none scroll-mt-28 bg-[linear-gradient(180deg,#302e2d_0%,#2c2a29_100%)] pb-0 sm:-mx-6 sm:scroll-mt-32 lg:-mx-7 lg:scroll-mt-36"
         >
           <div className="relative z-10 overflow-hidden rounded-t-none rounded-b-[3.2rem] bg-[#1c1b1a] shadow-[0_30px_90px_rgba(12,10,9,0.18)] sm:rounded-b-[4rem] lg:rounded-b-[4.8rem]">
-            <div className="hero-grid relative isolate mx-auto max-w-[1880px]">
+            <div className="hero-grid relative isolate w-full">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(214,179,136,0.18),rgba(214,179,136,0)_38%)]" />
               <div className="absolute inset-y-0 right-[-12%] w-[36%] rounded-full bg-[radial-gradient(circle,rgba(214,179,136,0.12)_0%,rgba(214,179,136,0)_72%)] blur-3xl" />
               <div className="hero-main relative py-14 sm:py-16 lg:py-20">
